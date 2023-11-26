@@ -1,1 +1,1 @@
-Main-Class: com.solvd.textAnalyzer.Main
+Main-Class: com.solvd.textAnalyzer.Runner

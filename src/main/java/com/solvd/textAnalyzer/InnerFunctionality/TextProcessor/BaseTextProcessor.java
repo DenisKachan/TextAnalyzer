@@ -1,4 +1,4 @@
-package com.solvd.textAnalyzer.InnerFunctionality.TextReader;
+package com.solvd.textAnalyzer.InnerFunctionality.TextProcessor;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 @Log4j2
-public abstract class BaseReader {
+public abstract class BaseTextProcessor {
 
     public static final Scanner scanner = new Scanner(System.in);
 
-    public static String pathName = "fileForWriting.txt";
+    public static String pathName = "src/main/resources/fileForWriting.txt";
 
     public static final File fileForWriting = new File(pathName);
 
@@ -27,9 +27,9 @@ public abstract class BaseReader {
     }
 
 
-    public abstract BaseReader countUniqueWords() throws IOException;
+    public abstract BaseTextProcessor countUniqueWords() throws IOException;
 
-    public abstract BaseReader countAmountOfLetters() throws IOException;
+    public abstract BaseTextProcessor countAmountOfLetters() throws IOException;
 
-    public abstract BaseReader findACertainWord() throws IOException;
+    public abstract BaseTextProcessor findACertainWord() throws IOException;
 }

@@ -1,37 +1,20 @@
-package com.solvd.textAnalyzer.InnerFunctionality.TextReader;
+package com.solvd.textAnalyzer.InnerFunctionality.TextProcessor;
 
 import com.solvd.textAnalyzer.InnerFunctionality.Exceptions.InvalidWordException;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
 
 @Log4j2
-public class TextReaderFromFile extends BaseReader {
-
-    private static String content;
-
-    private String chooseTextFileToRead() {
-        log.info("Enter the name of the text file from the project directory");
-        try {
-            content = new Scanner(new File(BaseReader.scanner.nextLine())).useDelimiter("\\Z").next();
-            log.info("You chose a file with the following text: {}", content);
-            return content;
-        } catch (FileNotFoundException e) {
-            log.error(e.getMessage());
-            return null;
-        }
-    }
+public class TextProcessorFromConsole extends BaseTextProcessor {
 
     @Override
-    public TextReaderFromFile countUniqueWords() {
-        if (content == null) {
-            content = chooseTextFileToRead();
-        }
-        String text = StringUtils.replaceAll(content, "[^a-zA-Z0-9\\s]", "");
+    public TextProcessorFromConsole countUniqueWords() throws IOException {
+        log.info("Enter any kind of text");
+        String textFromConsole = scanner.nextLine();
+        writer.write(textFromConsole);
+        String text = StringUtils.replaceAll(textFromConsole, "[^A-Za-zА-Яа-я0-9\\s]", "");
         String[] allWords = StringUtils.split(text, " ");
         boolean[] array = new boolean[allWords.length];
         int j;
@@ -51,11 +34,10 @@ public class TextReaderFromFile extends BaseReader {
     }
 
     @Override
-    public TextReaderFromFile countAmountOfLetters() throws IOException {
-        if (content == null) {
-            content = chooseTextFileToRead();
-        }
-        String text = StringUtils.replaceAll(content, "[^a-zA-Z]", "");
+    public TextProcessorFromConsole countAmountOfLetters() throws IOException {
+        log.info("Enter any kind of text");
+        String textFromConsole = scanner.nextLine();
+        String text = StringUtils.replaceAll(textFromConsole, "[^A-Za-zА-Яа-я]", "");
         String letters = StringUtils.toRootUpperCase(text);
         for (int i = 0; i < StringUtils.length(letters); i++) {
             log.info(letters.charAt(i) + " ");
@@ -66,11 +48,11 @@ public class TextReaderFromFile extends BaseReader {
     }
 
     @Override
-    public TextReaderFromFile findACertainWord() {
-        if (content == null) {
-            content = chooseTextFileToRead();
-        }
-        String text = StringUtils.replaceAll(content, "[^a-zA-Z0-9\\s]", "");
+    public TextProcessorFromConsole findACertainWord() throws IOException {
+        log.info("Enter any kind of text");
+        String textFromConsole = scanner.nextLine();
+        writer.write(textFromConsole);
+        String text = StringUtils.replaceAll(textFromConsole, "[^A-Za-zА-Яа-я0-9\\s]", "");
         String[] allWords = StringUtils.split(text, " ");
         int wordsCounter = 0;
         log.info("Enter a specific word you want to find in the text");

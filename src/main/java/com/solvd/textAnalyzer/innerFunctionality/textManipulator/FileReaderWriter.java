@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 @Log4j2
-public class ReaderWriter {
+public class FileReaderWriter {
 
     public static final Scanner scanner = new Scanner(System.in);
 
@@ -33,7 +33,7 @@ public class ReaderWriter {
     public static String chooseTextFileToRead() {
         log.info("Enter the name of the text file from the project directory");
         try {
-            content = new Scanner(new File(ReaderWriter.scanner.nextLine())).useDelimiter("\\Z").next();
+            content = new Scanner(new File(FileReaderWriter.scanner.nextLine())).useDelimiter("\\Z").next();
             log.info("You chose a file with the following text: {}", content);
             return content;
         } catch (FileNotFoundException e) {

@@ -12,12 +12,12 @@ public class TextProcessor {
     public String neededText;
 
     public TextProcessor countUniqueWords() throws IOException {
-        if (ReaderWriter.option.equals("console")){
+        if (FileReaderWriter.option.equals("console")){
             log.info("Enter any kind of text");
-            neededText = ReaderWriter.scanner.nextLine();
-            ReaderWriter.writer.write(neededText);
-        } else { if(ReaderWriter.content == null){
-            neededText = ReaderWriter.chooseTextFileToRead();}
+            neededText = FileReaderWriter.scanner.nextLine();
+            FileReaderWriter.writer.write(neededText);
+        } else { if(FileReaderWriter.content == null){
+            neededText = FileReaderWriter.chooseTextFileToRead();}
 
         }
         String text = StringUtils.replaceAll(neededText, "[^A-Za-zА-Яа-я0-9\\s]", "");
@@ -39,37 +39,37 @@ public class TextProcessor {
     }
 
     public TextProcessor countAmountOfLetters() throws IOException {
-        if (ReaderWriter.option.equals("console")){
+        if (FileReaderWriter.option.equals("console")){
             log.info("Enter any kind of text");
-            neededText = ReaderWriter.scanner.nextLine();
-            ReaderWriter.writer.write(neededText);
-        } else { if(ReaderWriter.content == null){
-            neededText = ReaderWriter.chooseTextFileToRead();}
+            neededText = FileReaderWriter.scanner.nextLine();
+            FileReaderWriter.writer.write(neededText);
+        } else { if(FileReaderWriter.content == null){
+            neededText = FileReaderWriter.chooseTextFileToRead();}
 
         }
         String text = StringUtils.replaceAll(neededText, "[^A-Za-zА-Яа-я]", "");
         String letters = StringUtils.toRootUpperCase(text);
         for (int i = 0; i < StringUtils.length(letters); i++) {
             log.info(letters.charAt(i) + " ");
-            ReaderWriter.writer.write(letters.charAt(i) + " ");
+            FileReaderWriter.writer.write(letters.charAt(i) + " ");
         }
         log.info("Total amount of letters is - {}", StringUtils.length(letters));
         return this;
     }
 
     public TextProcessor findACertainWord() throws IOException {
-        if (ReaderWriter.option.equals("console")){
+        if (FileReaderWriter.option.equals("console")){
             log.info("Enter any kind of text");
-            neededText = ReaderWriter.scanner.nextLine();
-            ReaderWriter.writer.write(neededText);
-        } else { if(ReaderWriter.content == null){
-            neededText = ReaderWriter.chooseTextFileToRead();}
+            neededText = FileReaderWriter.scanner.nextLine();
+            FileReaderWriter.writer.write(neededText);
+        } else { if(FileReaderWriter.content == null){
+            neededText = FileReaderWriter.chooseTextFileToRead();}
         }
         String text = StringUtils.replaceAll(neededText, "[^A-Za-zА-Яа-я0-9\\s]", "");
         String[] allWords = StringUtils.split(text, " ");
         int wordsCounter = 0;
         log.info("Enter a specific word you want to find in the text");
-        String certainWord = ReaderWriter.scanner.nextLine();
+        String certainWord = FileReaderWriter.scanner.nextLine();
         while (!StringUtils.isAlphanumeric(certainWord)
                 || StringUtils.length(certainWord) < 2 || certainWord.matches(".*[0-9].*")
                 || StringUtils.contains(certainWord, " ")) {
@@ -77,7 +77,7 @@ public class TextProcessor {
                 throw new InvalidWordException("The word is incorrect, type it again");
             } catch (InvalidWordException e) {
                 log.error(e.getMessage());
-                certainWord = ReaderWriter.scanner.nextLine();
+                certainWord = FileReaderWriter.scanner.nextLine();
             }
         }
         for (String allWord : allWords) {

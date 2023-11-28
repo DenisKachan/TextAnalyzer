@@ -2126,16 +2126,16 @@ It is commonly used to host open source software development projects.
 21:18:06.568 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.TextProcessor - Total number of matches - 1
 21:18:06.568 [main] INFO  com.solvd.textAnalyzer.menu.MainMenu - Your session is over
 21:18:32.000 [main] INFO  com.solvd.textAnalyzer.menu.MainMenu - Please enter 'console' if you want to print your own text or 'file' if you want to get text from the existing file
-21:18:34.383 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.ReaderWriter - Enter the name of the text file from the project directory
-21:18:53.093 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.ReaderWriter - You chose a file with the following text: GitHub, Inc. is a platform and cloud-based service for software development and version control, allowing developers to
+21:18:34.383 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.FileReaderWriter - Enter the name of the text file from the project directory
+21:18:53.093 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.FileReaderWriter - You chose a file with the following text: GitHub, Inc. is a platform and cloud-based service for software development and version control, allowing developers to
 store and manage their code. It uses Git software, providing the distributed version control of Git plus access control,
 bug tracking, software feature requests, task management, continuous integration, and wikis for every project.
 It is commonly used to host open source software development projects.
 21:18:53.103 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.TextProcessor - Total number of unique words - 46
-21:18:53.103 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.ReaderWriter - Enter the name of the text file from the project directory
+21:18:53.103 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.FileReaderWriter - Enter the name of the text file from the project directory
 21:21:11.059 [main] INFO  com.solvd.textAnalyzer.menu.MainMenu - Please enter 'console' if you want to print your own text or 'file' if you want to get text from the existing file
-21:21:16.413 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.ReaderWriter - Enter the name of the text file from the project directory
-21:21:34.015 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.ReaderWriter - You chose a file with the following text: GitHub, Inc. is a platform and cloud-based service for software development and version control, allowing developers to
+21:21:16.413 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.FileReaderWriter - Enter the name of the text file from the project directory
+21:21:34.015 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textManipulator.FileReaderWriter - You chose a file with the following text: GitHub, Inc. is a platform and cloud-based service for software development and version control, allowing developers to
 store and manage their code. It uses Git software, providing the distributed version control of Git plus access control,
 bug tracking, software feature requests, task management, continuous integration, and wikis for every project.
 It is commonly used to host open source software development projects.

@@ -1,4 +1,4 @@
-package com.solvd.textAnalyzer.innerFunctionality.textProcessor;
+package com.solvd.textAnalyzer.innerFunctionality.textManipulator;
 
 import lombok.extern.log4j.Log4j2;
 

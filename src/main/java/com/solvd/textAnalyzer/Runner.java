@@ -1,6 +1,6 @@
 package com.solvd.textAnalyzer;
 
-import com.solvd.textAnalyzer.innerFunctionality.textProcessor.ReaderWriter;
+import com.solvd.textAnalyzer.innerFunctionality.textManipulator.ReaderWriter;
 import com.solvd.textAnalyzer.menu.MainMenu;
 
 import java.io.IOException;

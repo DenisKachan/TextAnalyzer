@@ -1,4 +1,4 @@
-package com.solvd.textAnalyzer.innerFunctionality.textProcessor;
+package com.solvd.textAnalyzer.innerFunctionality.textManipulator;
 
 import com.solvd.textAnalyzer.innerFunctionality.exceptions.InvalidWordException;
 import lombok.extern.log4j.Log4j2;

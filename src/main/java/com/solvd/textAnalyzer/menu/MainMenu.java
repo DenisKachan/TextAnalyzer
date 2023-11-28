@@ -1,6 +1,6 @@
 package com.solvd.textAnalyzer.menu;
 
-import com.solvd.textAnalyzer.innerFunctionality.textProcessor.*;
+import com.solvd.textAnalyzer.innerFunctionality.textManipulator.*;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 

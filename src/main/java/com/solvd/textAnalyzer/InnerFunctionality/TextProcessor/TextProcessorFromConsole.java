@@ -17,12 +17,11 @@ public class TextProcessorFromConsole extends BaseTextProcessor {
         String text = StringUtils.replaceAll(textFromConsole, "[^A-Za-zА-Яа-я0-9\\s]", "");
         String[] allWords = StringUtils.split(text, " ");
         boolean[] array = new boolean[allWords.length];
-        int j;
         int uniqueWordsCounter = 0;
         for (int i = 0; i < allWords.length; i++) {
             if (!array[i]) {
                 uniqueWordsCounter++;
-                for (j = i + 1; j < allWords.length; j++) {
+                for (int j = i + 1; j < allWords.length; j++) {
                     if ((StringUtils.compareIgnoreCase(allWords[j], (allWords[i])) == 0)) {
                         array[j] = true;
                     }

@@ -12,7 +12,7 @@ public class MainMenu {
     public TextProcessor chooseAction() {
         textProcessor = null;
         log.info("Please enter 'console' if you want to print your own text or 'file' if you want to get text from the existing file");
-        String option = BaseTextProcessor.scanner.nextLine();
+        String option = ReaderWriter.scanner.nextLine();
         String neededOption = StringUtils.toRootLowerCase(option);
         switch (neededOption) {
             case "console" -> {

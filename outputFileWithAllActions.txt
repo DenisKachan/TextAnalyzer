@@ -2493,3 +2493,16 @@ It is commonly used to host open source software development projects.
 21:21:34.098 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - Enter a specific word you want to find in the text
 21:21:37.796 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - Total number of matches - 0
 21:21:37.800 [main] INFO  com.solvd.textAnalyzer.menu.MainMenu - Your session is over
+21:25:55.198 [main] INFO  com.solvd.textAnalyzer.menu.MainMenu - Please enter 'console' if you want to print your own text or 'file' if you want to get text from the existing file
+21:25:58.994 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - Enter any kind of text
+21:26:00.437 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - Total number of unique words - 1
+21:26:00.438 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - Enter any kind of text
+21:26:02.130 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - J 
+21:26:02.130 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - J 
+21:26:02.131 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - J 
+21:26:02.131 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - D 
+21:26:02.131 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - Total amount of letters is - 4
+21:26:02.131 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - Enter any kind of text
+21:26:03.649 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - Enter a specific word you want to find in the text
+21:26:05.888 [main] INFO  com.solvd.textAnalyzer.innerFunctionality.textProcessor.TextProcessor - Total number of matches - 0
+21:26:05.889 [main] INFO  com.solvd.textAnalyzer.menu.MainMenu - Your session is over

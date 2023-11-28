@@ -1,13 +1,14 @@
 package com.solvd.textAnalyzer;
 
-import com.solvd.textAnalyzer.InnerFunctionality.TextProcessor.BaseTextProcessor;
-import com.solvd.textAnalyzer.Menu.MainMenu;
+import com.solvd.textAnalyzer.innerFunctionality.textProcessor.BaseTextProcessor;
+import com.solvd.textAnalyzer.innerFunctionality.textProcessor.ReaderWriter;
+import com.solvd.textAnalyzer.menu.MainMenu;
 
 import java.io.IOException;
 
 public class Runner {
     public static void main(String[] args) {
-        try (BaseTextProcessor.scanner; BaseTextProcessor.writer) {
+        try (ReaderWriter.scanner; ReaderWriter.writer) {
 
             MainMenu mainMenu = new MainMenu();
             mainMenu.chooseAction().

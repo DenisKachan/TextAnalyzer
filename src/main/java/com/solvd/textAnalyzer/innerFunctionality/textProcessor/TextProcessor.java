@@ -1,20 +1,26 @@
-package com.solvd.textAnalyzer.InnerFunctionality.TextProcessor;
+package com.solvd.textAnalyzer.innerFunctionality.textProcessor;
 
-import com.solvd.textAnalyzer.InnerFunctionality.Exceptions.InvalidWordException;
+import com.solvd.textAnalyzer.innerFunctionality.exceptions.InvalidWordException;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 
 @Log4j2
-public class TextProcessorFromConsole extends BaseTextProcessor {
+public class TextProcessor {
 
-    @Override
-    public TextProcessorFromConsole countUniqueWords() throws IOException {
-        log.info("Enter any kind of text");
-        String textFromConsole = scanner.nextLine();
-        writer.write(textFromConsole);
-        String text = StringUtils.replaceAll(textFromConsole, "[^A-Za-zА-Яа-я0-9\\s]", "");
+    public String neededText;
+
+    public TextProcessor countUniqueWords() throws IOException {
+        if (ReaderWriter.option.equals("console")){
+            log.info("Enter any kind of text");
+            neededText = ReaderWriter.scanner.nextLine();
+            ReaderWriter.writer.write(neededText);
+        } else { if(ReaderWriter.content == null){
+            neededText = ReaderWriter.chooseTextFileToRead();}
+
+        }
+        String text = StringUtils.replaceAll(neededText, "[^A-Za-zА-Яа-я0-9\\s]", "");
         String[] allWords = StringUtils.split(text, " ");
         boolean[] array = new boolean[allWords.length];
         int uniqueWordsCounter = 0;
@@ -32,30 +38,38 @@ public class TextProcessorFromConsole extends BaseTextProcessor {
         return this;
     }
 
-    @Override
-    public TextProcessorFromConsole countAmountOfLetters() throws IOException {
-        log.info("Enter any kind of text");
-        String textFromConsole = scanner.nextLine();
-        String text = StringUtils.replaceAll(textFromConsole, "[^A-Za-zА-Яа-я]", "");
+    public TextProcessor countAmountOfLetters() throws IOException {
+        if (ReaderWriter.option.equals("console")){
+            log.info("Enter any kind of text");
+            neededText = ReaderWriter.scanner.nextLine();
+            ReaderWriter.writer.write(neededText);
+        } else { if(ReaderWriter.content == null){
+            neededText = ReaderWriter.chooseTextFileToRead();}
+
+        }
+        String text = StringUtils.replaceAll(neededText, "[^A-Za-zА-Яа-я]", "");
         String letters = StringUtils.toRootUpperCase(text);
         for (int i = 0; i < StringUtils.length(letters); i++) {
             log.info(letters.charAt(i) + " ");
-            writer.write(letters.charAt(i) + " ");
+            ReaderWriter.writer.write(letters.charAt(i) + " ");
         }
         log.info("Total amount of letters is - {}", StringUtils.length(letters));
         return this;
     }
 
-    @Override
-    public TextProcessorFromConsole findACertainWord() throws IOException {
-        log.info("Enter any kind of text");
-        String textFromConsole = scanner.nextLine();
-        writer.write(textFromConsole);
-        String text = StringUtils.replaceAll(textFromConsole, "[^A-Za-zА-Яа-я0-9\\s]", "");
+    public TextProcessor findACertainWord() throws IOException {
+        if (ReaderWriter.option.equals("console")){
+            log.info("Enter any kind of text");
+            neededText = ReaderWriter.scanner.nextLine();
+            ReaderWriter.writer.write(neededText);
+        } else { if(ReaderWriter.content == null){
+            neededText = ReaderWriter.chooseTextFileToRead();}
+        }
+        String text = StringUtils.replaceAll(neededText, "[^A-Za-zА-Яа-я0-9\\s]", "");
         String[] allWords = StringUtils.split(text, " ");
         int wordsCounter = 0;
         log.info("Enter a specific word you want to find in the text");
-        String certainWord = scanner.nextLine();
+        String certainWord = ReaderWriter.scanner.nextLine();
         while (!StringUtils.isAlphanumeric(certainWord)
                 || StringUtils.length(certainWord) < 2 || certainWord.matches(".*[0-9].*")
                 || StringUtils.contains(certainWord, " ")) {
@@ -63,7 +77,7 @@ public class TextProcessorFromConsole extends BaseTextProcessor {
                 throw new InvalidWordException("The word is incorrect, type it again");
             } catch (InvalidWordException e) {
                 log.error(e.getMessage());
-                certainWord = scanner.nextLine();
+                certainWord = ReaderWriter.scanner.nextLine();
             }
         }
         for (String allWord : allWords) {
